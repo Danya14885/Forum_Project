@@ -49,6 +49,7 @@ def index():
         client_id = allposts[i]["client_id"]
         client_email = getClientById(client_id)["email"]
         allposts[i].update({"client_email": client_email})
+        print("123")
       return render_template("firstPage.html", posts = reversed(allposts))
 
 @app.route('/chatlist/<chat_id>')
