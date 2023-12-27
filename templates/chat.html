@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Новости</title>
+  <link href="{{ url_for('static', filename="styles/global.css") }}" rel="stylesheet" type="text/css" />
+  <link href="{{ url_for('static', filename="styles/chat.css") }}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="main">
+      <div class="navigation ">
+          <div class="navigation-side">
+              {% if session["id"] %}
+              <div class="navigation-item">
+                  <a href="{{url_for('index')}}">Лента</a>
+              </div>
+              <div class="navigation-item">
+                  <a href="{{url_for('chat_list')}}">Чаты</a>
+              </div>
+              {% endif %}
+          </div>
+          <div class="navigation-side">
+              {% if session["id"] %}
+              <div class="navigation-item">
+                   <a href="{{url_for('profile', client_id = session['id'])}}">Профиль</a>
+              </div>
+              {% else %}
+              <div class="navigation-item">
+                  <a href="{{url_for('signUp')}}">Войти</a>
+              </div>
+              {% endif %}
+              {% if session["id"] %}
+              <div class="navigation-item">
+                  <a href="{{url_for('login')}}">Выйти</a>
+              </div>
+              {% endif %}
+          </div>
+      </div>
+
+      {% if messages|length == 0 %}
+    <div class="box">Ни одного сообщения не найдено</div>
+    {% else %}
+    <div class="box" id="messages-holder">
+        {% for message in messages %}
+        <div>
+              {% if message.sender_id != session['id'] %}
+              <div class="message left">
+                  <div class="message-header">
+                      <span class="message-author">{{message.sender_email}}</span>
+                      <span class="message-datetime">{{message.datetime}}</span>
+                  </div>
+                  <div class="message-text">{{message.text}}</div>
+              </div>
+              {% else %}
+              <div class="message right">
+                  <div class="message-header">
+                      <span class="message-author">{{message.sender_email}}</span>
+                      <span class="message-datetime">{{message.datetime}}</span>
+                  </div>
+                  <div class="message-text">{{message.text}}</div>
+              </div>
+              {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+      <div class="box">
+        <div id="chat_id" style="display:none">{{chat_id}}</div>
+         <form id="form-message">
+              <textarea name="text" id="message" placeholder="Сообщение"></textarea>
+              <div>
+                  <button type="button" onclick="sendMessage()">Отправить</button>
+              </div>
+         </form>
+    </div>
+  </div>
+
+  <script>
+      let objDiv = document.getElementById("messages-holder");
+      objDiv.scrollTop = objDiv.scrollHeight;
+  </script>
+    <script src="https://cdn.socket.io/4.4.0/socket.io.min.js" integrity="sha384-1fOn6VtTq3PWwfsOrk45LnYcGosJwzMHv+Xh/Jx5303FVOXzEnw0EpLv30mtjmlj" crossorigin="anonymous"></script>
+    <script src='{{url_for("static",filename="js/chat.js")}}'></script>
+</body>
+
+</html>

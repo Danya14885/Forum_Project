@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/chat_list.css') }}">
+</head>
+<body>
+  <div class = "navigator">
+    <a class = "button" class = "a" class = "a" href = "{{url_for('index')}}">Лента</a>
+  </div>
+  {% if not session["id"] %}
+  <h3><a class = "a" href = "{{url_for('profile', client_id = session['id'])}}">Профиль</a></h3>
+  {%endif%}
+  {% if chats|length == 0 %}
+  <div class="box">Ни одного чата не найдено</div>
+  {% endif %}
+<div class = "chat">
+  {% for chat in chats %}
+  <div class="box">
+        <div href="{{ url_for('chat', chat_id = chat.id) }}">Чат с {{ chat.chat_with }}</div>
+        <br>
+        <a class = "button" href="{{ url_for('chat', chat_id = chat.id) }}">Перейти</a>
+  </div>
+  {% endfor %}
+</div>
+</body>
+</html>

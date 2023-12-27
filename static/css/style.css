@@ -1,0 +1,40 @@
+#profile{
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 15px;
+  padding-left: 20px;
+}
+
+.a{
+  font-weight: bolder;
+}
+
+.button{
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 2px solid #f7f7f7;
+}
+
+.main_nav{
+  display:flex;
+}
+
+.navigator{
+  display: flex;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+#prof{
+  margin-left: 10px;
+}
+
+#exit{
+  margin-left: 1285px;
+}

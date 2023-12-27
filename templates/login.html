@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{url_for('static',filename='css/login.css') }}">
+</head>
+<body>
+  <div class = navigator>
+    <a  class= "button" href = "{{url_for('signUp')}}">Регестрация</a>
+  </div>
+  <h2 id = "text">Авторизация</h2>
+  <div class = "login">
+    <form method = "POST">
+      <input class = "a" type = "email" placeholder = "email" name = "email">
+      <br>
+      <input class= "a" type = "password" placeholder = "Пароль" name = "password">
+      <br>
+      <input class = "b" type = "submit" >
+      <p>{{error}}</p>
+    </form>
+  </div>
+</body>
+</html>

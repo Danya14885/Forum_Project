@@ -1,0 +1,45 @@
+.signUp{
+  text-align: center;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-top: 10px;
+  margin-left: 400px;
+  margin-right: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.button{
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 2px solid #f7f7f7;
+  text-decoration: none;
+  color: black;
+}
+
+.navigator{
+  display: flex;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+}
+
+#text{
+  text-align: center;
+}
+
+.a{
+  margin-top: 5px;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.b{
+  padding-left: 298px;
+  padding-right: 298px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}

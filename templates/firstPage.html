@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/firstPage.css') }}">
+</head>
+<body>
+  <div class="navigator">
+<div class = "navigator-slide">
+  <a class = "button"  href = "{{url_for('chat_list')}}">Чаты</a> 
+  <a class = "button" id = "prof" href = "{{url_for('profile', client_id = session['id'])}}">Профиль</a>
+</div>
+<div class = "navigator-slide">
+  {% if not session["id"] %}
+  <a class = "button" href = "{{url_for('signUp')}}">Регестрация</a></h3>
+  {%endif%}
+  <a class = "button" href = "{{url_for('login')}}">Авторизация</a></h3>
+  </div>
+  </div>
+  <form method = "POST" enctype="multipart/form-data" id = "create_post">
+    <input type = "text" placeholder = "Сообщение" name = "post_text" id = 'text'>
+    <div id="but_form">
+    <input type = "file" placeholder = "Картинка" name = "picture" id = "img" >
+    <input type  = "submit" id = "otpravit" >
+    </div>
+  </form >
+  <div class = "all_posts">
+    {% for i in posts %}
+    <div class = "post">
+      
+      <div class = "date_and_email">
+        <div>
+          <h3 ><a class = "email" href = "{{url_for('profile', client_id = i.client_id)}}" >{{i.client_email}}</a></h3>
+          <br>
+           <span>{{i.text}}</span>
+        </div>
+        <div>
+           <h3>{{i.date}}</h3>
+        </div>
+      </div>
+      
+      {% if i.post_img != '' %}
+        <div class = "img">
+        <img src = "{{url_for('get_file', filename = i.post_img)}}" width = "200px" height = "200px">
+        </div>
+      {% endif %}
+      
+     
+      
+      
+      {% if i.client_id == session["id"]%}
+      <form method = "POST" action="{{url_for('delete', post_id = i.id)}}">
+       <input type = "submit" value = "Удалить" name = "delete" class = "button">
+      </form>
+      {%endif%}
+      
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

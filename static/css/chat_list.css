@@ -1,0 +1,30 @@
+.navigator{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 10px;
+}
+
+.button{
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 2px solid #f7f7f7;
+  text-decoration: none;
+  color: black;
+}
+
+.chat{
+  text-align: center;
+}
+
+.box{
+  margin-right: 150px;
+  margin-left: 150px;
+  margin-top: 15px;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 30px;
+  width: 78%;
+  text-align: center;
+}

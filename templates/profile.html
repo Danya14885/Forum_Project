@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <div class="main_nav">
+    <div class = navigator>
+      <a  class= "button" href = "{{url_for('index')}}">Лента</a>
+      <a  id = "exit" class = "button" href = "{{url_for('signUp')}}">Выйти</a>
+      <a id = "prof" class = "button" href = "{{url_for('profile', client_id = session['id'])}}">Профиль</a>
+    </div>
+  </div>
+  <div id = "profile">
+    <div><h4>Профиль</h4></div>
+      email:  {{client["email"]}}
+      <br>
+      Имя:  {{client["name"]}}
+      <br>
+      Id:  {{client["id"]}}
+  </div>
+  {% if client["id"] != session['id'] %}
+      {{client["id"]}}
+      <div class="box">
+          <a href="{{url_for('chat_find', client_id=client['id'])}}">Отправить сообщение</a>
+      </div>
+  {% endif %}
+</body>
+</html>

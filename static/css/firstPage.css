@@ -1,0 +1,97 @@
+.button{
+  padding: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 2px solid #f7f7f7;
+  text-decoration: none;
+  color: black;
+}
+
+.navigator{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+}
+
+#text{
+  text-align: center;
+}
+
+.a{
+  margin-top: 5px;
+  padding-left: 250px;
+  padding-right: 250px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.b{
+  padding-left: 298px;
+  padding-right: 298px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+}
+
+#profile{
+  margin-left: 1285px;
+}
+
+#create_post{
+  margin-right: 150px;
+  margin-left: 150px;
+  margin-top: 15px;
+  display:flex;
+  justify-content: space-between;
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 20px;
+  width: 78%;
+}
+
+#text{
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 15px;
+  width: 850px;
+  text-align: center;
+}
+
+#but_form{
+  display:flex;
+  flex-direction:column;
+}
+
+#otpravit{
+  width: 114px;
+}
+
+.post{
+  border: 2px solid #f7f7f7;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  width: 78%;
+  margin: auto;
+  margin-top: 15px;
+  padding: 15px;
+}
+
+.all_posts{
+  position: absolute;
+  width:100%;
+  height:100%;
+}
+
+.date_and_email{
+  display: flex;
+  justify-content: space-between;
+}
+
+.email{
+  text-decoration: none;
+  color: black;
+}
+
+.img{
+  text-align: center;
+}
